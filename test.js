@@ -1,4 +1,3 @@
-console.log('Hello');
 const choices = ["Rock","Paper","Scissors"];
 const playerText = document.querySelector("#playerText");
 const computerText = document.querySelector("#computerText");
@@ -23,10 +22,8 @@ function getComputerChoice() {
 }
 
 function checkWinner() {
-    let playerScore = 0;
-    let computerScore = 0;
     if (computerChoice == playerChoice) {
-        return "Tie";
+        return "Tie"
     } else if (computerChoice == "Rock" && playerChoice == "Scissors" ||
                computerChoice == "Paper" && playerChoice == "Rock" ||
                computerChoice == "Scissors" && playerChoice == "Paper"
@@ -35,7 +32,4 @@ function checkWinner() {
     } else {
         return `You win!   ${playerChoice} beats ${computerChoice}`;
     }
-}
-
-let playerScore = 0;
-let computerScore = 0;
+} 

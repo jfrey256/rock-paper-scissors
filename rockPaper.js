@@ -4,6 +4,9 @@ const playerText = document.querySelector("#playerText");
 const computerText = document.querySelector("#computerText");
 const result = document.querySelector("#result");
 const title = document.querySelector("#title");
+const cpuScore = document.querySelector("#cpuScore");
+const playScore = document.querySelector("#playScore");
+const final = document.querySelector("#final");
 let playerChoice;
 let computerChoice;
 
@@ -16,6 +19,9 @@ buttons.forEach(button => button.addEventListener("click", () => {
     playerText.textContent = `You chose ${playerChoice}`;
     computerText.textContent = `Computer chose ${computerChoice}`;
     result.textContent = checkWinner();
+    keepScore();
+    playScore.textContent = `You: ${playerScore}`;
+    cpuScore.textContent = `Computer: ${computerScore}`;
 }));
 
 function getComputerChoice() {
@@ -39,3 +45,18 @@ function checkWinner() {
 
 let playerScore = 0;
 let computerScore = 0;
+
+function keepScore() {
+    if (computerChoice == playerChoice) {
+        playerScore;
+        computerScore;
+    }
+    else if (computerChoice == "Rock" && playerChoice == "Scissors" ||
+               computerChoice == "Paper" && playerChoice == "Rock" ||
+               computerChoice == "Scissors" && playerChoice == "Paper"
+    ) {
+        return computerScore++;
+    } else {
+        return playerScore++;
+    }
+}
